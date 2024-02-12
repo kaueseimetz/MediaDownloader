@@ -1,0 +1,12 @@
+{
+    "name": "Yt Media Downloader",
+    "version": "1.3.0",
+    "description": "Faça download de seus vídeos e músicas com o Yt Media Downloader",
+    "security": {
+      "requestedPrivileges": {
+        "requestedExecutionLevel": "asInvoker",
+        "uiAccess": false
+      }
+    }
+  }
+  

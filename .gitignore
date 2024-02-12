@@ -1,3 +1,6 @@
 /__pycache__
 /build
 /versions
+/videos
+MediaDownloaderGUI.py
+screen.kv
