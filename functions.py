@@ -1,5 +1,5 @@
 from tkinter import messagebox
-from pytube import YouTube, Playlist
+from pytubefix import YouTube, Playlist # type: ignore
 import urllib, sys, requests, os
 from urllib.parse import urlparse
 from colorama import init, Fore, Style
@@ -30,9 +30,9 @@ def getVideoPath():
     caminho_videos = os.path.join(os.path.expanduser('~'), 'Videos')
     return caminho_videos
 
-mediaPath = Path(f"{getVideoPath()}\\YT Video Downloader")
-videoPath = Path(f"{mediaPath}\\Videos")
-audioPath = Path(f"{mediaPath}\\Audio")
+mediaPath = Path(f"{getVideoPath()}/YT Video Downloader")
+videoPath = Path(f"{mediaPath}/Videos")
+audioPath = Path(f"{mediaPath}/Audio")
 
 pathList = [mediaPath, videoPath, audioPath]
 
@@ -140,7 +140,8 @@ def Menu(videoPath, audioPath):
     if r == "1":
             try:
                 GetYoutubeVideo(getURLByUser("o vídeo"), videoPath)
-            except urllib.error.URLError:
+            except urllib.error.URLError as e:
+                #print(e)
                 messagebox.showerror(title="Falha na conexão", message="Ocorreu uma falha de conexão durante o download, \nverifique a sua conexão com a internet e tente novamente.")
                 return newDownload()
         
