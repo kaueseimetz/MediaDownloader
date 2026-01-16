@@ -10,9 +10,9 @@ print(logo)
 for path in pathList:
     if not path.is_dir():
         os.mkdir(path)
-
-try:
-    main()
+if __name__ == "__main__":
+    try:
+        main()
         
-except KeyboardInterrupt:
-    print("\nApp finalizado pelo usuário")
+    except KeyboardInterrupt:
+        print("\nApp finalizado pelo usuário")
