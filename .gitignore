@@ -9,6 +9,7 @@
 !requirements.txt
 !readme.md
 !manifest.json
+!.github/
 
 dist/
 build/
