@@ -28,16 +28,16 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build executable
-        run: pyinstaller --onefile app.py
+        run: pyinstaller --onefile MediaDownloader.py
 
       - name: Rename executable
         run: |
           if [[ "$RUNNER_OS" == "Windows" ]]; then
-            mv dist/app.exe dist/app-windows.exe
+            mv dist/MediaDownloader.exe dist/MediaDownloader-windows.exe
           elif [[ "$RUNNER_OS" == "Linux" ]]; then
-            mv dist/app dist/app-linux
+            mv dist/MediaDownloader dist/MediaDownloader-linux
           elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            mv dist/app dist/app-macos
+            mv dist/MediaDownloader dist/MediaDownloader-macos
           fi
         shell: bash
 
